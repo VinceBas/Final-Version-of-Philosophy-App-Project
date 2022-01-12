@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> My Thoughts </title>
+</head>
+
+<style>
+  textarea.textRegion {
+    resize: none;
+    text-align: center;
+    font-size: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    border: 2px solid black;
+  }
+
+  button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px;
+    font-size: 20;
+  }
+
+  #firstParagraph {
+    text-align: center;
+  }
+
+  #stressLevel {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+
+<body style='background-color:lightsalmon'>
+
+  <h1 style="text-align:center; font-family: Arial;"> My Thoughts </h1>
+
+  <textarea id="textArea" class='textRegion' rows='20' cols='120' text-align='center'> Write Anything </textarea>
+
+  <br>
+
+  <button onclick='saveTextAsFile()' value="save" id="save"> Save Your Text </button>
+
+  <div id='firstParagraph'> </div>
+
+  <br>
+
+  <select id='stressLevel'></select>
+
+  <script src='saveButton.js'></script>
+
+</body>
+
+</html>

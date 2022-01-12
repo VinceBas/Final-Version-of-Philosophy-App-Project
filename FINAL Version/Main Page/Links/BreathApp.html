@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Breathing App </title>
+</head>
+
+<style>
+	body {
+		background-color: lightsalmon;
+		font-family: Arial;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		box-sizing: border-box;
+		font-size: 20px;
+	}
+
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 365px;
+		width: 365px;
+		margin: auto;
+		position: relative;
+	}
+
+	.gradient-circle {
+		background-color: rgb(23, 154, 194);
+		text-align: center;
+		height: 390px;
+		width: 390px;
+		position: absolute;
+		z-index: -2;
+		border-radius: 50%;
+	}
+
+	.circle {
+		background-color: rgba(3, 247, 247, 0.667);
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		z-index: -1;
+		border-radius: 50%;
+
+	}
+</style>
+
+<body style='background-color:lightsalmon'>
+
+	<h1> Breath and Relax </h1>
+
+	<div class='container'>
+		<div class="circle"></div>
+
+		<div class="gradient-circle"></div>
+
+		<p id="text"> </p>
+	</div>
+
+	<script>
+		let container = document.querySelector('.container')
+		let text = document.querySelector('#text')
+
+		let totalTime = 10000
+		let breathTime = (totalTime / 5) * 2
+		let holdTime = totalTime / 5
+
+		function breath() {
+			text.innerHTML = 'Breath In'
+
+			function hold() {
+				text.innerHTML = 'Hold'
+
+				function breathOut() {
+					text.innerHTML = 'Breathe Out'
+				}
+				setTimeout(breathOut, breathTime)
+			}
+			setTimeout(hold, holdTime)
+		}
+		setInterval(breath, totalTime)
+
+	</script>
+
+</body>
+
+</html>
